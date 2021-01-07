@@ -3,7 +3,7 @@ from django.utils import timezone
 
 class Book(models.Model):
     # branch choice
-
+    # need some improvements on branchs
     BRANCHS = (
         ('Natural Science', 'Natural Science'),
         ('Social Science', 'Social Science'),
@@ -17,8 +17,8 @@ class Book(models.Model):
         ('civic', 'civic'),
     )
     title = models.CharField(max_length=200, blank=True)
-    book = models.FileField(upload_to='books', blank=True)
-    cover = models.ImageField(blank=True, upload_to="cover")
+    book = models.FileField(upload_to='storage/books', blank=True)
+    cover = models.ImageField(blank=True, upload_to="storage/cover")
     grade = models.CharField(max_length=3)
     branch = models.CharField(max_length=30, choices=BRANCHS)
     subject = models.CharField(max_length=30, choices=SUBJECTS)
