@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Testing Vue</title>
+    {% if env_name == 'production' %}
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    {% else %}
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    {% endif %}
+  </head>
+  <body>
+    <h1>Testing, Testing</h1>
+
+    <div id="vue-app">
+        <h1>[[ myTitle ]]</h1>
+      </div>
+      <script type="text/javascript">
+        let app = new Vue({
+          el: "#vue-app",
+          delimiters: ['[[', ']]'],
+          data: {
+            myTitle: 'Hello Vue!',
+          },
+        });
+      </script>
+    
+  </body>
+</html>
