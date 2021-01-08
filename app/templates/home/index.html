@@ -69,8 +69,8 @@
                                     <button class="btn success text-white">Grade - {{ book.grade }} | {{ book.subject }}</button>
 
                                     <div class="container">
-                                        <a href="{% url 'singleBook' book.id %}" class="btn btn-info">View <i class="fa fa-eye"></i></a>
-                                        <button class="btn btn-success">Download <i class="fa fa-download"></i> </button>
+                                        <a href="{% url 'singleBook' book.id %}" class="mb-2 btn btn-info">View <i class="fa fa-eye"></i></a>
+                                        <a href="/media/{{ book.book }}" class="btn btn-success">Download <i class="fa fa-download"></i> </a>
                                         <!-- ADD SOME FONT-AWESOME ICONS FOR DOWNLOAD AND VIEW -->
                                     </div>
                                 </div>
