@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+    <div class="p-5"> 
+    </div>
+    <div class="container p-2">
+        <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="p-2 btn btn-success">Login</button>
+        </form>
+
+        <div class="forgot login-footer">
+            <span>Looking to
+                 <a href="{% url 'register' %}">create an account</a>
+            ?</span>
+        </div>
+
+    </div>
+
+{% endblock %}

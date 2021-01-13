@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Built in HIGHTECH</h2>
+                        <p class="text-white-50">
+                            <a href="https://startbootstrap.com/theme/grayscale/">HIGHTECH</a>
+                            is a passionate team of developers located in MicroLink IT College, Addis Abeba in Ethiopia.
+                            <a href="https://startbootstrap.com/theme/grayscale/">Manbeb</a>
+                            is a free, fast and easy to use website to get textbooks for ethiopians.
+                        </p>
+                    </div>
+                </div>
+                <img class="img-fluid" src="{% static 'assets/img/ipad.png' %}" alt="" />
+            </div>
+        </section>
+
+{% endblock %}

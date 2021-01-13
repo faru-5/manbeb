@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'vue_app'
+    'vue_app',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,6 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+LOGIN_REDIRECT_URL = '/'

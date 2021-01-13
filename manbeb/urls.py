@@ -22,6 +22,7 @@ from vue_app import views as vue_views
 
 urlpatterns = [
     path('', include('app.urls')),
+    path('auth/', include("accounts.urls")),
     path('admin/', admin.site.urls),
     path('test/', vue_views.test_vue)
 ]
