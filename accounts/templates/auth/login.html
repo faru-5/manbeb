@@ -14,7 +14,11 @@
         <h1>Login</h1>
         <form method="post">
             {% csrf_token %}
-            {{form.as_p}}
+            
+                <p><label for="id_username">Username:</label> <input type="text" class="form-control" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></p>
+                <p><label for="id_password">Password:</label> <input type="password" class="form-control" name="password" autocomplete="current-password" required id="id_password"></p>
+                
+
             <button class="p-2 btn btn-success">Login</button>
         </form>
 
@@ -25,5 +29,7 @@
         </div>
 
     </div>
+
+    
 
 {% endblock %}
