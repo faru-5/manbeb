@@ -3,16 +3,17 @@
 {% load static %}
 {% block content %}
         <!-- Masthead-->
-        <header class="masthead">
-            <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center">
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">WELCOME <u>{{ user.username.upper }}</u>.</h2>
-                    <h1 class="mx-auto my-0 text-uppercase">MANBEB</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A Free, Fast and Reliable TextBook Resource For <u>Ethiopians</u>.</h2>
-                    <a class="btn btn-primary js-scroll-trigger" href="#books">Get Started</a>
+        {% if not user.is_authenticated %}
+            <header class="masthead">
+                <div class="container d-flex h-100 align-items-center">
+                    <div class="mx-auto text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">MANBEB</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A Free, Fast and Reliable TextBook Resource For <u>Ethiopians</u>.</h2>
+                        <a class="btn btn-primary js-scroll-trigger" href="#books">Get Started</a>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        {% endif %}
         <!-- Books-->
         <section class="projects-section bg-light" id="books">
             <center><h1>TextBooks</h1></center>

@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.admin import User
 from .forms import SignUpForm
@@ -21,7 +20,6 @@ def register(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             uname = form.cleaned_data.get('username')
-            pword = form.clean_password2()
             success(request, uname)
             form.save()
             return redirect('login')
