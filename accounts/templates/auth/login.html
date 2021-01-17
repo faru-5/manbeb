@@ -5,28 +5,36 @@
 
     <div class="p-5"> 
     </div>
-    <div class="container p-2">
-        {% if messages %}
-            {% for message in messages %}
-                <p class="alert alert-info">your account <code>{{message}}</code> has created please login to ensure that's you</p>
-            {% endfor %}
-        {% endif %}
-        <h1>Login</h1>
-        <form method="post">
-            {% csrf_token %}
-            
-                <p><label for="id_username">Username:</label> <input type="text" class="form-control" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></p>
-                <p><label for="id_password">Password:</label> <input type="password" class="form-control" name="password" autocomplete="current-password" required id="id_password"></p>
-                
-
-            <button class="p-2 btn btn-success">Login</button>
-        </form>
-
-        <div class="forgot login-footer">
-            <span>Looking to
-                 <a href="{% url 'register' %}">create an account</a>
-            ?</span>
+    
+    <div class="row container">
+        <div class="col-sm-5">
+            <div class="container p-2">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="alert alert-info">your account <code>{{message}}</code> has created please login to ensure that's you</p>
+                    {% endfor %}
+                {% endif %}
+                <h1>Login</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    
+                        <p><label for="id_username">Username:</label> <input type="text" class="form-control" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></p>
+                        <p><label for="id_password">Password:</label> <input type="password" class="form-control" name="password" autocomplete="current-password" required id="id_password"></p>
+                        
+        
+                    <button class="p-2 btn btn-success">Login</button>
+                </form>
+        
+                <div class="forgot login-footer">
+                    <span>Looking to
+                        <a href="{% url 'register' %}">create an account</a>
+                    ?</span>
+                </div>
         </div>
+    </div>
+    <div class="col-sm-7">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore quia sequi accusantium officia quos veritatis! Distinctio nisi, corporis quos velit nobis itaque laboriosam natus tempora nemo qui, saepe, est nesciunt!
+    </div>
 
     </div>
 
