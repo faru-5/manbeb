@@ -6,28 +6,32 @@ class SignUpForm(UserCreationForm):
     username = forms.CharField(
         widget=forms.TextInput(
             attrs={
-                "placeholder":"username"
+                "placeholder":"username",
+                "class":"form-control"
             }
         )
     )
     email = forms.CharField(
         widget=forms.EmailInput(
             attrs={
-                "placeholder":"email"
+                "placeholder":"email",
+                "class":"form-control"
             }
         )
     )
     password1 = forms.CharField(
         widget = forms.PasswordInput(
             attrs={
-                "placeholder":"password"
+                "placeholder":"password",
+                "class":"form-control"
             }
         )
     )
     password2 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "placeholder":"confirm password"
+                "placeholder":"confirm password",
+                "class":"form-control"
             }
         )
     )
