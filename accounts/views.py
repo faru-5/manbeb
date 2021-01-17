@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.admin import User
+from .forms import SignUpForm
+from django.contrib.messages import success
 
 
 class Login(LoginView):
@@ -12,19 +15,16 @@ class Login(LoginView):
 class Logout(LogoutView):
     template_name = "home/about.html"
 
-    
+
 def register(request):
-    user = User.objects.all()
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        
+        form = SignUpForm(request.POST)
         if form.is_valid():
+            uname = form.cleaned_data.get('username')
+            pword = form.clean_password2()
+            success(request, uname)
             form.save()
-            username = form.cleaned_data.get('username')
-            return redirect("login")
-    
+            return redirect('login')
     else:
-        form = UserCreationForm()
-
+        form = SignUpForm()
     return render(request, 'auth/register.html', {'form':form})
-

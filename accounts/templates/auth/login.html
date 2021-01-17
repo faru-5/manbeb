@@ -6,6 +6,11 @@
     <div class="p-5"> 
     </div>
     <div class="container p-2">
+        {% if messages %}
+            {% for message in messages %}
+                <p class="alert alert-info">your account <code>{{message}}</code> has created please login to ensure that's you</p>
+            {% endfor %}
+        {% endif %}
         <h1>Login</h1>
         <form method="post">
             {% csrf_token %}
