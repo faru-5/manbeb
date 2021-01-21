@@ -3,6 +3,22 @@
 {% load static %}
 {% block content %}
 
+    {% if not user.is_authenticated %}
+        <div class="md:flex h-96 md:mx-32 w-auto rounded-md">
+            <div class=" bg-black text-white rounded-lg my-3 px-2 py-9">
+                <h1 class="font-bold text-lg uppercase text-center px-10 text-green-500">welcome to MANBEB </h3>
+
+                <div class="p-3 px-24 text-xl text-center">
+                    <span class="text-blue-400">MANBEB</span> is a textbook store where students can download or read online. especially __manbeb__ is prepared for ethiopians.
+                </div>
+
+                <div class="text-center my-3">
+                    <a href="{% url 'login' %}" class=" rounded-sm bg-green-500 text-center px-4 py-2">Login</a>
+                    <a href="{% url 'login' %}" class=" rounded-sm bg-green-500 text-center px-4 py-2">Signup</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
     <h1 class="  text-4xl text-center underline hover:text-green-800 p-4 uppercase">Popular Books</h1>
     <div class="lg:grid grid-cols-2">
@@ -26,55 +42,5 @@
             </div>
         {% endfor %}
     </div>
-        <!-- Masthead-->
-        {% if not user.is_authenticated %}
-            <header class="masthead">
-                <div class="container d-flex h-100 align-items-center">
-                    <div class="mx-auto text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">MANBEB</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A Free, Fast and Reliable TextBook Resource For <u>Ethiopians</u>.</h2>
-                        <a class="btn btn-primary js-scroll-trigger" href="#books">Explore</a>
-                        <a class="btn btn-primary js-scroll-trigger" href="{% url 'login' %}" >Sign In</a>
-                    </div>
-                </div>
-            </header>
-        {% endif %}
-        <!-- Books-->
-        <section class="projects-section bg-light" id="books">
-            <center><h1>TextBooks</h1></center>
-            <div class="container">
-                <!-- Featured Project Row-->
-                {% for book in books %}
-
-                <div class="row justify-content-center bg-black no-gutters mb-5 mb-lg-0"> <!-- bg-black helps if the photo height is smaller it darks the page-->
-                    <div class="col-lg-6">
-                        <img class="img-fluid"src="{{ book.cover.url }}" alt="" />
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">{{ book }}</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                    <button class="btn success text-white">{{ book.branch }}</button>
-                                    <button class="btn success text-white">Grade - {{ book.grade }} | {{ book.subject }}</button>
-
-                                    <div class="container">
-                                        <a href="{% url 'singleBook' book.id %}" class="p-2 btn btn-info">View <i class="fa fa-eye"></i></a>
-                                        <a href="/media/{{ book.book }}" class="p-2 btn btn-success">Download <i class="fa fa-download"></i> </a>
-                                        <!-- ADD SOME FONT-AWESOME ICONS FOR DOWNLOAD AND VIEW -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="d-none d-lg-block mb-0 ml-0" />
-                {% endfor %}
-                
-            </div>
-        </section>
-
 
 {% endblock %}
