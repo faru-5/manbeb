@@ -16,26 +16,15 @@
             <div class="text-blue-400 rounded py-5 mx-3  px-3 bg-black w-auto font-bold uppercase">
                 man<span class="text-green-500">beb</span>
             </div>
+            <div class="text-blue-600 font-bold rounded- bg-white absolute mr-3 right-0 uppercase py-5 px-3">
+                <a href="{% url 'login' %}">Login</a>
+            </div>
         </div>
 
         <!-- endnav -->
 
         <div class="p-2 ">
-            <div class="md:flex h-96 md:mx-32 w-auto rounded-md">
-                <div class=" bg-black text-white rounded-lg my-3 px-2 py-9">
-                    <h1 class="font-bold text-lg uppercase text-center px-10 text-green-500">welcome to MANBEB </h3>
-
-                    <div class="p-3 px-24 text-xl text-center">
-                        <span class="text-blue-400">MANBEB</span> is a textbook store where students can download or read online. especially __manbeb__ is prepared for ethiopians.
-                    </div>
-
-                    <div class="text-center my-3">
-                        <button class=" rounded-sm bg-green-500 text-center px-4 py-2">Login</button>
-                        <button class=" rounded-sm bg-green-500 text-center px-4 py-2">Signup</button>
-                    </div>
-                </div>
-
-            </div>
+            
 
             {% block content %}{% endblock %}
         </div>
