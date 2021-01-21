@@ -1,37 +1,31 @@
-{% extends 'base.html' %}
+{% extends 'base-app.html' %}
 
 {% load static %}
 {% block content %}
+
         <!-- Books-->
-        <section class="projects-section bg-light" id="books">
-            <div class="container">
-                <!-- Featured Project Row-->
-
-                <div class="row justify-content-center bg-black no-gutters mb-5 mb-lg-0"> <!-- bg-black helps if the photo height is smaller it darks the page-->
-                    <div class="col-lg-6">
-                        <img class="img-fluid"src="{{ book.cover.url }}" alt="" />
+        <section class="bg-green-500 rounded-lg w-auto" id="books">
+            <div class="">
+                    
+                <div class="grid md:flex relative mx-2 my-1">
+                    <div class="flex-1  my-1 ml-1">
+                        <img class="w-76" width="400" src="{{ book.cover.url }}" alt="{{ book.title }}" />
+                        <div class="top-10 my-2 shadow-xl shadow-black right-0 md:top-0 md:left-0 font-bold rounded-lg bg-blue-400 text-white absolute p-2 w-40">{{ book.branch }}</div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 project">
-                            <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">{{ book }}</h4>
-                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                                    <hr class="d-none d-lg-block mb-0 ml-0" />
-                                    <button class="btn success text-white">{{ book.branch }}</button>
-                                    <button class="btn success text-white">Grade - {{ book.grade }} | {{ book.subject }}</button>
-
-                                    <div class="container">
-                                        <a href="/media/{{ book.book }}" target="_blank" rel="nopener noreferrer" class="p-2 mb-1 btn btn-info">Read Online <i class="fa fa-book"></i></a>
-                                        
-                                        <a href="/media/{{ book.book }}" class="p-2 mb-1 btn btn-success">Download <i class="fa fa-download"></i> </a>
-                                        <!-- ADD SOME FONT-AWESOME ICONS FOR DOWNLOAD AND VIEW -->
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="flex-1 py-3 px-3 my-1">
+                        <a href="{% url 'singleBook' book.id%}" class="font-bold text-xl hover:underline uppercase">{{book}} |<span class="font-light text-sm "> Grade {{ book.grade }}</span></a>
+                        
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque error, est </p>
+                        <div class="flex m-2 mx-2 my-5 text-green-500 uppercase text-center ">
+                            <a href="{% url 'singleBook' book.id%}" class="rounded-lg p-2 hover:font-bold my-1 mx-1 w-32 hover:bg-white hover:text-black bg-black">Open  <i class="fa fa-book"></i></a>
+                            <a href="/media/{{ book.book }}" target="_blank" class="rounded-lg p-2 hover:font-bold w-32 my-1 mx-1 hover:bg-white hover:text-black bg-black">download <i class="fa fa-download"></i></a>
+                    
                         </div>
+                        <div class="top-0 right-0 w-auto shadow-xl shadow-black uppercase rounded-lg bg-yellow-300 text-green-500 text-light absolute p-2 w-auto">{{ book.subject }}</div>
                     </div>
                 </div>
+                        
+                
                 <hr class="d-none d-lg-block mb-0 ml-0" />
                 
             </div>
